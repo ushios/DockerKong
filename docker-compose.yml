@@ -17,7 +17,7 @@ services:
       - cassandra-db
     volumes:
       - .:/opt/scripts
-    command: ["/opt/scripts/wait-for-cassandra.sh", "cassandra-db", "9042", "&&", "kong", "start"]
+    command: ["/opt/scripts/wait-for-cassandra.sh", "cassandra-db", "9042", "--", "kong", "start"]
   cassandra-db:
     image: cassandra:2.2
     ports:

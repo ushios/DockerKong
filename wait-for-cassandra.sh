@@ -5,7 +5,7 @@ set -e
 
 host="$1"
 port="$2"
-shift
+shift 2
 cmd="$@"
 
 until cqlsh $host $port -e "DESCRIBE keyspaces"; do
@@ -13,5 +13,5 @@ until cqlsh $host $port -e "DESCRIBE keyspaces"; do
   sleep 1
 done
 
-# >&2 echo "Cassandra is up - executing command"
-# exec $cmd
+>&2 echo "Cassandra is up - executing command"
+exec $cmd
