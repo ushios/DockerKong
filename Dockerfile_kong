@@ -1,0 +1,7 @@
+FROM kong
+LABEL maintainer "ushio.s@gmail.com"
+
+RUN yum install -y python-pip
+RUN pip install cqlsh
+
+CMD ["kong", "start"]
