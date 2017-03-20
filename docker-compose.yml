@@ -1,5 +1,13 @@
 version: '2'
 services:
+  jungle:
+    image: rsdevigo/jungle
+    environment:
+      KONGURL: http://kong:8001
+    ports:
+      - 3000:3000
+    links:
+      - kong
   kong:
     build:
       context: .
