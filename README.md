@@ -2,7 +2,7 @@
 
 Start kong with cassandra and jungle.
 
-## Run kong with cassandra
+## Get started
 
 ```bash
 $ docker-compose up -d
